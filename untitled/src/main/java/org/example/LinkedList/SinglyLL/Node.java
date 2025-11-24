@@ -1,4 +1,4 @@
-package org.example.LinkedList;
+package org.example.LinkedList.SinglyLL;
 
 public class Node {
     int data;
