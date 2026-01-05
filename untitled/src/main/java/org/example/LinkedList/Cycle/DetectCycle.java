@@ -1,5 +1,7 @@
 package org.example.LinkedList.Cycle;
 
+import java.util.HashSet;
+
 public class DetectCycle {
     static class Node {
         int data;
@@ -13,6 +15,20 @@ public class DetectCycle {
     static class LinkedList {
         Node head;
 
+        // Brute Force: Using HashSet
+        boolean hasCycleBruteForce(Node head) {
+            HashSet<Node> visited = new HashSet<>();
+            Node current = head;
+
+            while (current != null) {
+                if (visited.contains(current)) {
+                    return true; // cycle detected
+                }
+                visited.add(current);
+                current = current.next;
+            }
+            return false; // no cycle
+        }
         // Detect cycle using Floyd’s algorithm
         boolean hasCycle(Node head) {
             if (head == null) return false;
@@ -92,6 +108,9 @@ public class DetectCycle {
 
             // Create a cycle: 4 -> 2
             list.head.next.next.next.next = list.head.next;
+
+            // Brute Force check
+            System.out.println("Cycle detected (Brute Force): " + list.hasCycleBruteForce(list.head));
 
             // Check cycle
             System.out.println("Cycle detected: " + list.hasCycle(list.head));
