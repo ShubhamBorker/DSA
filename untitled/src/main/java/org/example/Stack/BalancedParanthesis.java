@@ -4,20 +4,38 @@ import java.util.Stack;
 
 public class BalancedParanthesis {
     public static boolean isBalanced(String expr){
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> st = new Stack<>();
 
-        for (char ch: expr.toCharArray()){
-            if (ch =='{' || ch =='(' || ch =='['){
-                stack.push(ch);
-            } else if (ch == '}' || ch == ')' || ch ==']') {
-                if(stack.isEmpty()) return false;
-                char top = stack.pop();
-                if ((ch == '}' && top !='{')|| (ch==')' && top!='(') || (ch==']' && top!='[')){
-                    return  false;
+        for (char ch : expr.toCharArray()) {
+
+            if (st.isEmpty() || ch == '(' || ch == '[' || ch == '{') {
+                st.push(ch);
+                continue;
+            }
+
+            if (ch == ')') {
+                if (st.peek() == '(') {
+                    st.pop();
+                } else {
+                    return false;
+                }
+            } else if (ch == ']') {
+                if (st.peek() == '[') {
+                    st.pop();
+                } else {
+                    return false;
+                }
+            } else if (ch == '}') {
+                if (st.peek() == '{') {
+                    st.pop();
+                } else {
+                    return false;
                 }
             }
+
         }
-        return stack.isEmpty();
+
+        return st.isEmpty();
     }
 
     public static void main(String[]args){
