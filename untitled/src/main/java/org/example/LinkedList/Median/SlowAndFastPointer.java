@@ -1,7 +1,5 @@
 package org.example.LinkedList.Median;
 
-import org.example.LinkedList.DoublyLL.Main;
-
 public class SlowAndFastPointer {
     static class Node{
         int data;

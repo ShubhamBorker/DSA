@@ -1,6 +1,18 @@
 package org.example.LinkedList.DoublyLL;
 
 public class DoublyLL {
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
     Node head;
 
     // Method to insert a new node at the end of the list
@@ -56,5 +68,21 @@ public class DoublyLL {
         if (current.prev != null) {
             current.prev.next = current.next;
         }
+    }
+
+    public static void main(String[] args) {
+        DoublyLL list = new DoublyLL();
+
+        // Inserting nodes
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        System.out.println("Doubly Linked List after insertion:");
+        list.display();
+
+        // Deleting a node
+        list.delete(20);
+        System.out.println("Doubly Linked List after deleting 20:");
+        list.display();
     }
 }

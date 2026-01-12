@@ -1,6 +1,15 @@
 package org.example.LinkedList.SinglyLL;
 
 public class LinkedList {
+    class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
     Node head;
 
     // Method to insert a new node at the end of the list
@@ -48,5 +57,20 @@ public class LinkedList {
 
         // Unlink the node from linked list
         prev.next = current.next;
+    }
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+
+        // Inserting nodes
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        System.out.println("Linked List after insertion:");
+        list.display();
+
+        // Deleting a node
+        list.delete(20);
+        System.out.println("Linked List after deleting 20:");
+        list.display();
     }
 }

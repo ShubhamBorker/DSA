@@ -1,7 +1,5 @@
 package org.example.LinkedList.ReverseLL.Recursion;
 
-import org.example.LinkedList.DoublyLL.Node;
-
 public class ReverseLLrecursion {
 
     static class ListNode{
