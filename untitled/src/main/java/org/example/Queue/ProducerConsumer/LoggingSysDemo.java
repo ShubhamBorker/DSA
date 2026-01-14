@@ -1,6 +1,5 @@
 package org.example.Queue.ProducerConsumer;
 
-import org.example.Queue.LogConsumer;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
