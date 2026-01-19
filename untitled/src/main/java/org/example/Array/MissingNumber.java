@@ -32,7 +32,7 @@ public class MissingNumber {
         int n = arr.length + 1; // expected range size
         System.out.println("Missing number (Brute): " + MissingNoBrute(arr, n));
 
-            int[] arr1 = {1, 2, 4, 5, 6};
+            int[] arr1 = {1, 2, 3, 5, 6};
             int n1 = arr1.length + 1; // expected range size
             System.out.println("Missing number (Sum Formula): " + MissingNooptimized(arr1, n1));
 
