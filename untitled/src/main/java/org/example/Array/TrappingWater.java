@@ -26,9 +26,27 @@ public class TrappingWater {
             return water;
         }
 
+        public static int trapOpt(int[] height){
+            int maxarea=0;
+            int left=0; int right= height.length-1;
+
+            while(left<right){
+                int area=Math.min(height[left],height[right])*(right-left);
+                maxarea=Math.max(maxarea,area);
+
+                if (height[left]<height[right]){
+                    left++;
+                }else {
+                    right--;
+                }
+            }
+            return maxarea;
+        }
+
         public static void main(String[] args) {
             int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
             System.out.println("Trapped Water = " + trap(height));
+            System.out.println("Trapped Water = " + trapOpt(height));
         }
 
 }
